@@ -48,7 +48,7 @@
         "lowerCaseServiceName": "[toLower(parameters('siteName'))]",
         "registryName": "healthplatformregistry.azurecr.io",
         "resourcesLocation": "[resourceGroup().location]",
-        "serverfarmName": "[concat('plan-',variables('lowerCaseServiceName'), '-northcentralus-001')]"
+        "serverfarmName": "[concat('plan-',variables('lowerCaseServiceName'))]"
     },
     "resources": [
         {

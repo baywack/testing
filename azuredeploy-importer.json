@@ -92,7 +92,7 @@
         "functionAppName": "[concat('azfun-',parameters('appName'),'-test-001')]",
         "hostingPlanName": "[concat('plan-',parameters('appName'),'-northcentral-001')]",
         "applicationInsightsName": "[concat('azapp-',parameters('appName'),'-test-001')]",
-        "storageAccountName": "[replace(concat(toLower('st',parameters('appName')), 'sa'),'-','')]",
+        "storageAccountName": "[concat('st',parameters('appName'))]",
         "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
         "aadAudience": "[if(empty(parameters('aadAudience')),parameters('fhirServerUrl'),parameters('aadAudience'))]"
     },

@@ -89,10 +89,10 @@
         }
     },
     "variables": {
-        "functionAppName": "[parameters('appName')]",
-        "hostingPlanName": "[parameters('appName')]",
-        "applicationInsightsName": "[parameters('appName')]",
-        "storageAccountName": "[replace(concat(toLower(parameters('appName')), 'sa'),'-','')]",
+        "functionAppName": "[concat('azfun-',parameters('appName'),'-test-001')]",
+        "hostingPlanName": "[concat('plan-',parameters('appName'),'-northcentral-001')]",
+        "applicationInsightsName": "[concat('azapp-',parameters('appName'),'-test-001')]",
+        "storageAccountName": "[replace(concat(toLower('st',parameters('appName')), 'sa'),'-','')]",
         "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
         "aadAudience": "[if(empty(parameters('aadAudience')),parameters('fhirServerUrl'),parameters('aadAudience'))]"
     },
@@ -264,7 +264,7 @@
         "apiVersion": "2018-05-01-preview",
         "name": "[variables('applicationInsightsName')]",
         "type": "microsoft.insights/components",
-        "location": "[parameters('location')]",
+        "location": "North Central US",
         "tags": {
             "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', variables('applicationInsightsName'))]": "Resource"
         },

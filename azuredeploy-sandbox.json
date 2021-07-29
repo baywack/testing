@@ -188,7 +188,7 @@
         "fhirServiceUrl": "[concat('https://', variables('fhirServiceName'), variables('fhirServerUrlSuffix'))]",
         "fhirServiceKind": "[concat('fhir-', parameters('fhirVersion'))]",
         "aadFhirServerAudience": "[if(empty(parameters('aadFhirServerAudience')), variables('fhirServiceUrl'), parameters('aadFhirServerAudience'))]",
-        "fhirDashboardJSName": "[concat('dash-',variables('environmentName'))]",
+        "fhirDashboardJSName": "[concat('azapp-',variables('environmentName'))]",
         "growthChartName": "[concat('azapp-',variables('environmentName'),'growth-test-001')]",
         "medicationsName": "[concat('azapp-',variables('environmentName'),'meds-test-001')]",
         "baseUri": "[deployment().properties.templateLink.uri]",

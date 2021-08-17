@@ -144,8 +144,8 @@
             "location": "[parameters('location')]",
             "properties": {
                 "name": "[variables('hostingPlanName')]",
-                "computeMode": "Standard",
-                "sku": "Standard"
+                "computeMode": "Dynamic",
+                "sku": "Dynamic"
             }
         },
         {

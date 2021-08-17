@@ -89,9 +89,9 @@
         }
     },
     "variables": {
-        "functionAppName": "[concat('azfun-',parameters('appName'),'-test-001')]",
+        "functionAppName": "[concat('azfun-',parameters('appName'),'-prod-001')]",
         "hostingPlanName": "[concat('plan-azfun-',parameters('appName'),'-northcentral-001')]",
-        "applicationInsightsName": "[concat('azfun-',parameters('appName'),'-test-001')]",
+        "applicationInsightsName": "[concat('azfun-',parameters('appName'),'-prod-001')]",
         "storageAccountName": "[concat('st',parameters('appName'))]",
         "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
         "aadAudience": "[if(empty(parameters('aadAudience')),parameters('fhirServerUrl'),parameters('aadAudience'))]"

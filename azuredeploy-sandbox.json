@@ -179,7 +179,7 @@
     "variables": {
         "cosmosThroughPut": 1000,
         "isMAG": "[or(contains(resourceGroup().location,'usgov'),contains(resourceGroup().location,'usdod'))]",
-        "appServicePlanName": "[concat('plan-',variables('environmentName'),'dash-prod-001')]",
+        "appServicePlanName": "[concat('plan-',variables('environmentName'),'dash-dev-001')]",
         "environmentName": "[if(empty(parameters('environmentName')), concat('fhirdemo', uniqueString(resourceGroup().id)), parameters('environmentName'))]",
         "fhirServiceName": "[if(parameters('usePaaS'), concat('bcbsnd',variables('environmentName')), concat(variables('environmentName'),'srvr'))]",
         "fhirImporterName": "[concat(variables('environmentName'),'imp')]",
@@ -188,9 +188,9 @@
         "fhirServiceUrl": "[concat('https://', variables('fhirServiceName'), variables('fhirServerUrlSuffix'))]",
         "fhirServiceKind": "[concat('fhir-', parameters('fhirVersion'))]",
         "aadFhirServerAudience": "[if(empty(parameters('aadFhirServerAudience')), variables('fhirServiceUrl'), parameters('aadFhirServerAudience'))]",
-        "fhirDashboardJSName": "[concat('azapp-',variables('environmentName'),'dash-prod-001')]",
-        "growthChartName": "[concat('azapp-',variables('environmentName'),'growth-prod-001')]",
-        "medicationsName": "[concat('azapp-',variables('environmentName'),'meds-prod-001')]",
+        "fhirDashboardJSName": "[concat('azapp-',variables('environmentName'),'dash-dev-001')]",
+        "growthChartName": "[concat('azapp-',variables('environmentName'),'growth-dev-001')]",
+        "medicationsName": "[concat('azapp-',variables('environmentName'),'meds-dev-001')]",
         "baseUri": "[deployment().properties.templateLink.uri]",
         "smartAppTemplateUrl": "[if(empty(parameters('smartAppTemplateUrl')), uri(variables('baseUri'), 'azuredeploy-smart-app.json'), parameters('smartAppTemplateUrl'))]",
         "allowedOrigins": [
